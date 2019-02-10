@@ -19,3 +19,15 @@ html {
     width: 400px;
     margin: 20px auto;
 }
+
+.calculator-screen {
+    width: 100%;
+    font-size: 5rem;
+    text-align: right;
+    border: none;
+    background-color: #252525;
+    color: #fff;
+    height: 80px;
+    padding-right: 20px;
+    padding-left: 10px;
+}
