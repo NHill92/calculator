@@ -1,4 +1,7 @@
 /* CSS Reset */
+:root {
+    font-family: Helvetica, Arial, sans-serif;
+}
 
 html {
     font-size: 62.5%;
@@ -9,6 +12,18 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+}
+
+input:hover,
+input:active,
+input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus,
+button:hover,
+button:active,
+button:focus {
+  outline: none;
 }
 
 /* Calculator Style */
@@ -28,7 +43,7 @@ html {
     background-color: #252525;
     color: #fff;
     height: 80px;
-    padding: 10px 20px;
+    padding: 20px 20px;
 }
 
 .calculator-keys {
@@ -78,4 +93,8 @@ button:hover {
 
 .equal-sign:hover {
     background-color: #4e9ed4;
+}
+
+.is-depressed {
+    background-color: rgba(0,0,0,0.2);
 }
