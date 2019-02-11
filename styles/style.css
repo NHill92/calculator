@@ -28,8 +28,7 @@ html {
     background-color: #252525;
     color: #fff;
     height: 80px;
-    padding-right: 20px;
-    padding-left: 10px;
+    padding: 10px 20px;
 }
 
 .calculator-keys {
