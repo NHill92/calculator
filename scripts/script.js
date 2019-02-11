@@ -12,7 +12,11 @@ keys.addEventListener('click', e => {
 
         if (!action) {
             console.log('number key!');
-            if (displayedNum === '0' || previousKeyType === 'operator') {
+            if (
+                displayedNum === '0' || 
+                previousKeyType === 'operator' ||
+                previousKeyType === 'equal'
+            ) {
                 screen.textContent = keyContent;
             } else {
                 screen.textContent = displayedNum + keyContent;
@@ -35,7 +39,8 @@ keys.addEventListener('click', e => {
 
             if (firstValue && 
                 operator &&
-                previousKeyType !== 'operator'
+                previousKeyType !== 'operator' &&
+                previousKeyType !== 'equal'
             ) {
                 const calcValue = operate(firstValue, secondValue, operator);
                 screen.textContent = calcValue;
@@ -52,9 +57,12 @@ keys.addEventListener('click', e => {
 
         if (action === 'decimal') {
             console.log('decimal key!');
-            if (!displayedNum.includes('.') && previousKeyType != 'operator') {
+            if (!displayedNum.includes('.')) {
                 screen.textContent = displayedNum + '.';
-            } else if (previousKeyType === 'operator') {
+            } else if (
+                previousKeyType === 'operator' ||
+                previousKeyType === 'equal'
+            ) {
                 screen.textContent = '0.';
             }
             calculator.dataset.previousKeyType = 'decimal';
@@ -62,7 +70,21 @@ keys.addEventListener('click', e => {
 
         if (action === 'clear') {
             console.log('clear key!');
+            if (key.textContent === 'AC') {
+                calculator.dataset.firstValue = '';
+                calculator.dataset.modValue = '';
+                calculator.dataset.operator = '';
+                calculator.dataset.previousKeyType = '';
+            } else {
+                key.textContent = 'AC';
+            }
+            screen.textContent = 0;
             calculator.dataset.previousKeyType = 'clear';
+        }
+
+        if (action !== 'clear') {
+            const clearBtn = calculator.querySelector('[data-action=clear]')
+            clearBtn.textContent = 'CE';
         }
 
         if (action === 'equal') {
