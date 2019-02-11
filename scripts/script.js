@@ -129,19 +129,10 @@ function divide(a, b) {
 }
 
 function operate(a, b, operator) {
-    let result = '';
     a = parseFloat(a);
     b = parseFloat(b);
-
-    if (operator === 'add') {
-        result = add(a, b);
-    } else if (operator === 'subtract') {
-        result = subtract(a, b);
-    } else if (operator === 'multiply') {
-        result = multiply(a, b);
-    } else if (operator === 'divide') {
-        result = divide(a, b);
-    }
-
-    return result;
+    if (operator === 'add') return add(a, b);
+    if (operator === 'subtract') return subtract(a, b);
+    if (operator === 'multiply') return multiply(a, b);
+    if (operator === 'divide') return divide(a, b);
 }
