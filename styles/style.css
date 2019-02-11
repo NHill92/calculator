@@ -71,3 +71,10 @@ button:hover {
 .equal-sign:hover {
     background-color: #4e9ed4;
 }
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
