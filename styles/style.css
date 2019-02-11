@@ -32,6 +32,13 @@ html {
     padding-left: 10px;
 }
 
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
 button {
     height: 60px;
     background-color: #fff;
@@ -66,15 +73,10 @@ button:hover {
     background-color: #2e86c0;
     border-color: #337cac;
     color: #fff;
+    height: 100%;
+    grid-area: 2 / 4 / 6 / 5;
 }
 
 .equal-sign:hover {
     background-color: #4e9ed4;
-}
-
-.calculator-keys {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
 }
